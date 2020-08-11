@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-10 col-md-7 col-lg-7">
-                    <nav>
+                    <div class="navigation hidden-menu">
                         <ul class="menu">
                             <li><a href="">Home</a></li>
                             <li><a href="">About</a></li>
@@ -31,8 +31,14 @@
                             <li><a href="">Features</a></li>
                             <li><a href="">Contact</a></li>
                         </ul>
-                    </nav>
+                    </div>
+                    <div class="nav-mobile-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
+                
                 <div class="col-xs-12 col-sm-0 col-md-2 col-lg-2">
                     <div class="rowsearch">
                         <form action="" class="formsearch"><input type="search" placeholder="search" name="search" class="search"> 
@@ -338,6 +344,11 @@
                     <div class="stayintouch-head">
                         <div class="gray-square"></div><div class="stayintouch-name">Stay in touch.</div>
                     </div>
+                </div>
+            </div>
+            <div class="map"><img src="images/img1.png"></div>
+            <div class="container">
+                <div class="stayintouchrow">
                     <div class="stayintouch-mainpart">
                         <div class="contact">
                             <div class="contactname">Contact Information</div>
@@ -346,15 +357,8 @@
                                 <div class="contacttexttwo">Cras fermentum elit quis magna congue, <span class="sit">vel sodales</span> arcu vestibulum. Nunc lobortis dui magna, quis dapibus lacus 
                                 </div>
                             </div>
-                        </div>  
-                        <form action="" class="form">
-                            <div class="formmessage">
-                                <div class="yourinfoname"><p class="yourinfo">your name</p><input type="text" name="name" class="infobox yourname"></div>
-                                <div class="yourinfoemail"><p class="yourinfo">your email</p><input type="email" name="email" class="infobox youremail"></div>
-                                <div class="yourinfomessage"><p class="yourinfo">your message</p><input type="text" name="message" class="infobox yourmessage"> </div>
-                            </div>
-                            <input type="submit" value="Send Message" class="submitmessage">
-                        </form>
+                        </div>
+                        <button class="sendmessage">Send Message</button>
                     </div>
                 </div>
             </div>
@@ -365,5 +369,33 @@
 
         </div>
     </footer>
+    <!-- Modal Form -->
+    <div class="modalform">
+        <div class="form">
+            <form action="">
+            <div class="close-btn">X</div>
+            <div class="yourinfoname"><p class="yourinfo">your name</p><input type="text" name="name" class="infobox yourname"></div>
+            <div class="yourinfoemail"><p class="yourinfo">your email</p><input type="email" name="email" class="infobox youremail"></div>
+            <div class="yourinfomessage"><p class="yourinfo">your message</p><input type="text" name="message" class="infobox yourmessage"> </div>
+            <input type="submit" value="Send Message" class="submitmessage">
+            </form>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal">
+        <div class="modalwindow">
+            <form action="">
+                <div class="close-btn">X</div>
+                <h3>Enter your email for subscribe!</h3>
+                <div class="form-fields">
+                    <input type="text" placeholder="Your Name">
+                </div>
+                <div class="form-fields">
+                    <input type="email" placeholder="Your Email">
+                </div>
+                <button>Subscribe!</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

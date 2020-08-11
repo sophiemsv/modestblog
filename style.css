@@ -527,10 +527,8 @@
     background-position: center center;
 }
 /* Stay in touch */
-.stayintouch {
-    background-image: url(images/img1.png);
-    background-repeat: no-repeat;
-    background-position: center center;
+.map {
+    width: 100%;
 }
 
 .contactname {
@@ -543,14 +541,22 @@
     color: #8d8f92;
     font-size: 16px;
 }
+/* Form */
+.modalform {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 101;
+    cursor: pointer;
+    display: none;
+}
 .form {
     background-color: white;
     display: flex;
     flex-direction: column;
-}
-.formmessage {
-    display: flex;
-    flex-wrap: wrap;
 }
 .yourinfo {
     text-transform: uppercase;
@@ -562,7 +568,8 @@
     border: none;
     background-color: #eaeef1;
 }
-.submitmessage {
+
+.sendmessage,.submitmessage {
     text-transform: uppercase;
     text-decoration: none;
     border: none;
@@ -574,6 +581,54 @@
     width: 150px;
     height: 45px;
 }
+.hideform {
+    display: none;
+}
+.showform {
+    display: block;
+}
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    cursor: pointer;
+    display: none;
+}
+.modalwindow {
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    margin: 80px auto;
+    padding: 15px;
+    border: 1px solid grey;
+    box-sizing: border-box;
+}
+.form-fields {
+    margin: 10px 0;
+}
+.form-fields input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+}
+.close-btn {
+    cursor: pointer;
+    float: right;
+    height: 8px;
+    width: 8px;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
 /* --ONLY MOBILE-- */
 @media (max-width:767px) {
     .header {
@@ -714,6 +769,64 @@
     .contacttextone {
         margin-top: 20px;
         margin-bottom: 20px;
+    }
+    /* nav-mobile */
+    .nav-mobile-menu {
+        width: 15px;
+        height: 15px;
+        position: relative;
+    }
+    .nav-mobile-menu span {
+        height: 1px;
+        background-color: white;
+        position: absolute;
+		left: 0;
+		right: 0;
+		transition: .25s ease-in-out;
+	}
+    .nav-mobile-menu span:nth-child(1) {
+		top:3px;
+	}
+	.nav-mobile-menu span:nth-child(2) {
+		top:7px;
+	}
+	.nav-mobile-menu span:nth-child(3) {
+		bottom:3px;
+    }
+    .hidden-menu {
+        opacity: 0;
+        visibility: hidden;
+    }       
+    .navigation {
+        position: fixed;
+        top: 0;
+        border-bottom-right-radius: 0;
+        bottom: 0;
+        max-width: 280px;
+        transform: translateX(150%);
+        transition: all 500ms ease-in-out;
+    }
+    .nav-mobile-menu.active-menu span:nth-child(1){
+        top: 50%;
+        transform: rotate(45deg);
+    }
+    .nav-mobile-menu.active-menu span:nth-child(2){
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+    .nav-mobile-menu.active-menu span:nth-child(3){
+        transform: scale(0);
+    }
+    .navigation.active-menu{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+        top: 34px;
+        padding: 25px;
+        background-color: #1d2126;
+    }
+    .navigation.active-menu .menu {
+        flex-direction: column;
     }
 }
 
@@ -998,25 +1111,22 @@
     .stayintouch-mainpart {
         height: 640px;
         justify-content: space-between;
-        align-content: flex-end;
         padding-bottom: 40px;
     }
     .contact {
         width: 45%;
-        align-self: flex-end;
-        position: relative;
-        top: 60px;
-    }
 
+    }
+    .sendmessage {
+        align-self: flex-start;
+    }
     .form {
         width: 45%;
         padding-top: 20px;
         padding-bottom: 10px;
         padding-right: 20px;
         padding-left: 20px;
-        align-self: flex-end;
-        position: relative;
-        top: 60px;
+
     }
     .formmessage {
         flex-wrap: wrap;
@@ -1158,30 +1268,26 @@
     [class*="-featureimg"] {
         width: 360px;
         height: 240px;
-    }.contacttextone {
+    }
+    .contacttextone {
         margin-top: 30px;
         margin-bottom: 20px;
     }
     .stayintouch-mainpart {
         justify-content: space-between;
-        align-content: flex-end;
     }
     .contact {
         width: 45%;
-        align-self: flex-end;
-        position: relative;
-        top: 60px;
     }
-
+    .sendmessage {
+        align-self: flex-start;
+    }
     .form {
         width: 50%;
         padding-top: 20px;
         padding-bottom: 10px;
         padding-right: 20px;
         padding-left: 20px;
-        align-self: flex-end;
-        position: relative;
-        top: 60px;
     }
         .infobox {
             width: 240px;
@@ -1204,7 +1310,6 @@
         }
         .submitmessage {
             margin-top: 25px;
-            align-self: start;
         }
 }
 
